@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titre de la page</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      
+      h1, p {
+        margin: 5% 0;
+        max-width: 80%;
+      }
+      
+      #player {
+        display: block;
+        margin: 10% auto;
+        width: 80%;
+        height: 0;
+        padding-bottom: 56.25%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titre principal</h1>
+    <p>Paragraphe de contenu.</p>
+    <div id="player"></div>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          videoId: 'cDN0O54eP8g',
+          playerVars: { 'autoplay': 0, 'controls': 1 },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+    </script>
+  </body>
+</html>
